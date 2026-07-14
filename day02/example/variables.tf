@@ -41,3 +41,21 @@ variable "extra_labels" {
     team = "trainwithshubham"
   }
 }
+
+variable "docker_password" {
+  description = "Example sensitive variable"
+  type        = string
+  sensitive   = true
+  default     = "change-me"
+}
+
+variable "container_config" {
+  description = "Bonus optional object"
+  type = object({
+    name = string
+    port = optional(number, 8080)
+  })
+  default = {
+    name = "nginx"
+  }
+}
