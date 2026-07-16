@@ -9,6 +9,8 @@ resource "aws_s3_bucket" "state" {
   }
 }
 
+resource "aws_s3_bucket" "imported" {
+}
 # Keep a history of state files so you can recover from mistakes.
 resource "aws_s3_bucket_versioning" "state" {
   bucket = aws_s3_bucket.state.id
