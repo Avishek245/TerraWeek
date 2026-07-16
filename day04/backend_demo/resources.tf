@@ -7,6 +7,7 @@ resource "random_pet" "demo" {
   separator = "-"
 }
 
+
 output "demo_id" {
   description = "Proof that state is now stored remotely in S3."
   value       = random_pet.demo.id
