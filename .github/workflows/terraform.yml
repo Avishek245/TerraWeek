@@ -1,10 +1,10 @@
 name: Terraform CI
 
 on:
-  pull_request:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   terraform:
@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: example
+        working-directory: day06/example
 
     steps:
       - name: Checkout Repository
