@@ -1,7 +1,3 @@
-# Native Terraform tests (Terraform 1.6+). Run with:  terraform test
-# Each `run` block executes plan or apply and asserts on the result.
-
-# 1) Default (dev) should pick the small instance type. Plan-only, no apply.
 run "dev_uses_micro" {
   command = plan
 

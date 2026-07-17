@@ -1,5 +1,3 @@
-# A tiny, credential-free config so `terraform test` runs anywhere.
-# It builds a naming convention you can unit-test.
 
 variable "environment" {
   description = "Deployment environment."
@@ -13,13 +11,12 @@ variable "environment" {
 }
 
 variable "app_name" {
-  description = "Application name."
+  description = "AI Bank app"
   type        = string
   default     = "terraweek"
 }
 
 locals {
-  # In prod we run bigger instances — demonstrates workspace/env-driven sizing.
   instance_type = var.environment == "prod" ? "t3.medium" : "t3.micro"
   name_prefix   = "${var.app_name}-${var.environment}"
 }
