@@ -55,7 +55,13 @@ module "web_server" {
 # 2) Modular composition: the SAME module, instantiated many times with for_each.
 module "servers" {
   source   = "./modules/ec2_instance"
-  for_each = toset(["app", "worker", "cache"])
+ for_each = toset([
+    "app",
+    "worker",
+    "cache",
+    "database",
+    "monitoring"
+  ])
 
   name                   = each.key
   instance_type          = "t2.micro"
